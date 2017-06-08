@@ -4,9 +4,9 @@ import './Greater.css';
 export default class Greater extends React.Component {
     render() {
         return (
-            React.createElement("div", {className: "root"}, 
-                "Hello World"
-            )
+            <div className="root">
+                Hello World
+            </div>
         )
     }
 }
