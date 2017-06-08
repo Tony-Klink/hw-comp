@@ -2,20 +2,20 @@ const gulp = require("gulp");
 const del = require("del");
 const merge = require("merge-stream");
 
-gulp.task("clean:dist", function () {
-    return del(["dist"]);
+gulp.task("clean:lib", function () {
+    return del(["lib"]);
 });
 
-gulp.task("build:dist", function () {
-    gulp.start("clean:dist");
+gulp.task("build:lib", function () {
+    gulp.start("clean:lib");
     let js = gulp.src([ "./src/components/**/*.js", "!./src/components/index.js"])
-                 .pipe(gulp.dest("dist"));
+                 .pipe(gulp.dest("lib"));
 
     let json = gulp.src([ "./src/components/**/*.json", "!./src/components/index.json"])
-                 .pipe(gulp.dest("dist"));
+                 .pipe(gulp.dest("lib"));
 
     let css = gulp.src([ "./src/components/**/*.css", "!./src/components/index.css"])
-                  .pipe(gulp.dest("dist"));
+                  .pipe(gulp.dest("lib"));
 
     return merge(js, css, json);
 });
@@ -63,7 +63,7 @@ gulp.task("generate:index", function() {
             }
 
             gulpFile("index.js", exportsContent)
-                .pipe(gulp.dest("dist"));
+                .pipe(gulp.dest("lib"));
             return file;
         }));
 });
