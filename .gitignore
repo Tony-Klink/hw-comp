@@ -20,7 +20,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Project specific 
+# Project specific
 App.*
 src/index.css
 src/index.js
